@@ -31,7 +31,7 @@ export default function TwoFactor({ requiresConfirmation }: { requiresConfirmati
     const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
     const twoFactorEnabled = useMemo(() => !enabling && auth.user?.two_factor_enabled, [enabling, auth]);
 
-    const { data, setData, post, reset, errors, processing, recentlySuccessful } = useForm({
+    const { data, setData, post, reset, errors } = useForm({
         code: '',
     });
 
